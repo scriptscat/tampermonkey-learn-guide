@@ -1,0 +1,8 @@
+{
+  "label": "入门篇",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "油猴脚本开发的初步入门知识，你将会了解最基础的知识并尝试编写属于自己的脚本"
+  }
+}
