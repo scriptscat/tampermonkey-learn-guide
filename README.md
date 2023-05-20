@@ -1,41 +1,27 @@
-# Website
+# 简介
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+本文章采用中文撰写，其目的在于帮助脚本新人零基础入门油猴开发由浅入深
 
-### Installation
+在线阅读网址：https://learn.scriptcat.org
 
-```
-$ yarn
-```
+# 项目如何启动
 
-### Local Development
+确保本地有 nodejs 环境及 npm
 
-```
-$ yarn start
-```
+cmd 输入 npm i 安装环境依赖
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+输入 npx docusaurus start 启动项目
 
-### Build
+# 关于感谢名单
 
-```
-$ yarn build
-```
+如果你也想将自己的名字刻录在感谢名单上
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+请参与文章的编写/教程/图文绘画，任意一次的参与皆可进入感谢名单
 
-### Deployment
+# 关于赞助
 
-Using SSH:
+赞助金额大于 0.88 元即可进入赞助名单
 
-```
-$ USE_SSH=true yarn deploy
-```
+按金额大小进行排序
 
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+如不愿透漏名字将会按派蒙起名法(Paimon Case)进行随机命名
