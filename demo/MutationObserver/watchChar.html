@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="target">text</div>
+  </body>
+  <script>
+    const target = document.querySelector(".target");
+    let observer = new MutationObserver(function (mutations) {
+      console.log("mutations", mutations);
+    });
+    observer.observe(target, {
+      characterData: true,
+      characterDataOldValue: true,
+      subtree: true,
+    });
+    target.childNodes[0].textContent = "text1";
+    target.childNodes[0].textContent = "text2";
+  </script>
+</html>

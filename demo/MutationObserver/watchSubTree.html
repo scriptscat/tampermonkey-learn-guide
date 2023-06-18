@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="target">
+      <div class="son">
+        <div class="grandson">
+
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const target = document.querySelector(".target");
+    const grandson = document.querySelector(".grandson");
+    let observer = new MutationObserver(function (mutations) {
+      console.log("mutations", mutations);
+    });
+    observer.observe(target, {
+      childList: true,
+      subtree:true,
+    });
+    const Computer = document.createElement("div");
+    Computer.innerText = "Grandchild's Computer";
+    grandson.append(Computer);
+  </script>
+</html>
