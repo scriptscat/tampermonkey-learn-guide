@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="target"></div>
+  </body>
+  <script>
+    const target = document.querySelector(".target");
+    let observer = new MutationObserver(function (mutations) {
+        console.log('mutations',mutations)
+    });
+    observer.observe(target, {
+      childList: true,
+    });
+    const childList1 = document.createElement("div");
+    childList1.innerText = "div1";
+    target.append(childList1);
+    const childList2 = document.createElement("div");
+    childList2.innerText = "div2";
+    target.append(childList2);
+    childList2.remove()
+    childList1.remove()
+  </script>
+</html>
