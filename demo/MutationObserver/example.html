@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MutationObserve实战</title>
+  </head>
+  <body>
+    <div class="list"></div>
+  </body>
+  <script>
+    const list = document.querySelector(".list");
+    function createItem(name) {
+      const item = document.createElement("div");
+      item.innerText = name;
+      return item;
+    }
+    const render = () => {
+      list.innerHTML = "";
+      list.append(createItem("苹果"));
+      list.append(createItem("梨子"));
+      list.append(createItem("香蕉"));
+    };
+    render();
+    setInterval(() => {
+      render();
+    }, 1000);
+  </script>
+</html>
