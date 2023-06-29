@@ -52,7 +52,7 @@ ingress:
         - path: /
           pathType: ImplementationSpecific
   tls: 
-    - secretName: scriptcat-docs-tls
+    - secretName: scriptcat-org-tls
       hosts:
         - learn.scriptcat.org
 
