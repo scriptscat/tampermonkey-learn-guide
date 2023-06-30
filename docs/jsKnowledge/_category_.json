@@ -1,6 +1,6 @@
 {
   "label": "JavaScript 知识篇",
-  "position": 4,
+  "position": 7,
   "link": {
     "type": "generated-index",
     "description": "本篇集合了一些关于JS内容的文章，为防止读者在阅读开发指南的过程中出现断层，于是将指南中一些常用的但是初学开发者较不理解的JS知识进行解释。"
