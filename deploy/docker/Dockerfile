@@ -1,5 +1,5 @@
-ARG BASE_IMAGE
+ARG BASEIMAGE
 
-FROM $BASE_IMAGE
+FROM $BASEIMAGE
 
 COPY build /usr/share/nginx/html
