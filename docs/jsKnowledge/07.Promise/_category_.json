@@ -1,8 +1,0 @@
-{
-  "label": "Promise 知识",
-  "position": 7,
-  "link": {
-    "type": "generated-index",
-    "description": "本篇集合了一些关于Promise的知识，包括为什么需要Promise，Promise的使用，Promise的API，如何封装Promise等内容"
-  }
-}

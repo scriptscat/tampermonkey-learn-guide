@@ -1,0 +1,9 @@
+{
+  "label": "常见问题",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "本篇集合了一些开发者常见的问题。",
+    "slug": "实用知识库/常见问题"
+  }
+}
