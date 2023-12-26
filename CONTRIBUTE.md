@@ -35,6 +35,8 @@
 
 使用 `mdx` 语法，可以在 `md` 文件中使用 `jsx` 语法，例如：
 
+### BrowserOnly
+
 使用 `BrowserOnly` 组件，[例子](docs\01.油猴教程\01.入门篇\07.使用脚本向页面上添加新元素.md)
 
 ````
@@ -43,26 +45,24 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 ```
 ````
 
-使用 `Admonition` 组件，可以自定义高亮声明组件
+### Admonitions
 
-````
-```mdx-code-block
-import Admonition from '@theme/Admonition';
-```
-````
+使用 `:::` 标记，可以自定义内容或者组件，[例子](docs\01.油猴教程\01.入门篇\07.使用脚本向页面上添加新元素.md)
 
-此外，或者使用
 ```
-:::xxx
+:::xxx 标题
 
 这里是内容或者组件，
 
-xxx可以是：tip、note、warning、danger、info、success、question
+xxx可以是：tip、note、warning、danger、info
 
 :::
 ```
 
-相关说明: [docusaurus](https://docusaurus.io/docs/markdown-features/admonitions)
+> [!NOTE]
+> 相关说明: [docusaurus](https://docusaurus.io/docs/markdown-features/admonitions)
+
+### Tabs
 
 使用 `Tabs` 组件，可以自定义标签页组件，文档见 [docusaurus](https://docusaurus.io/docs/markdown-features/tabs)，[本项目例子](docs\简介.md)
 
@@ -73,3 +73,5 @@ import TabItem from '@theme/TabItem';
 ```
 ````
 
+> [!NOTE]
+> 相关说明: [docusaurus](https://docusaurus.io/docs/markdown-features/tabs)
