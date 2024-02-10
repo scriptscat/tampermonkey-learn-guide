@@ -225,6 +225,16 @@ const config = {
     }),
   markdown: {
     mermaid: true,
+    remarkRehypeOptions:{
+      footnoteLabel: "脚注",
+      footnoteBackLabel(id, id2) {
+        return (
+          '回到脚注 ' +
+          (id + 1) +
+          (id2 > 1 ? '-' + id2 : '')
+        )
+      }
+    }
   },
 };
 
