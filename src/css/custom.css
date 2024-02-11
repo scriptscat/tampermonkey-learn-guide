@@ -68,10 +68,14 @@ html[data-theme="dark"] .prism-code .remove {
   transition: opacity 0.5s;
 }
 
-.hide:not(:hover) *{
+.hide:not(:hover) * {
   opacity: 0;
 }
 
-.hide:hover{
+.hide:hover {
   opacity: 1;
+}
+
+.center {
+  text-align: center;
 }
