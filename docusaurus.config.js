@@ -1,9 +1,12 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import { themes } from "prism-react-renderer";
+const path = require("path");
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
-
+const { github: lightCodeTheme, dracula: darkCodeTheme } = themes;
+import { redirects, createRedirects } from "./src/plugins/redirect.js";
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "油猴开发指南",
@@ -18,22 +21,87 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: "scriptscat", // Usually your GitHub org/user name.
+  projectName: "tampermonkey-learn-guide", // Usually your repo name.
 
   trailingSlash: true,
 
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
 
-  themes: ["@docusaurus/theme-live-codeblock"],
+  themes: [
+    "@docusaurus/theme-live-codeblock",
+    "@docusaurus/theme-mermaid",
+    // PWA 支持
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
+        ],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/docusaurus.png',
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json', // your PWA manifest
+          },
+          // {
+          //   tagName: 'meta',
+          //   name: 'theme-color',
+          //   content: 'rgb(37, 194, 160)',
+          // },
+        ],
+      },
+    ],
+    [
+      // 离线搜索插件
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        .../** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+        ({
+          // `hashed` is recommended as long-term-cache of index file is possible.
+          hashed: true,
+          // For Docs using Chinese, The `language` is recommended to set to:
+          language: ["en", "zh"],
+          zhUserDictPath: require.resolve("./src/zh-dict.txt"),
+          docsRouteBasePath: "/",
+          highlightSearchTermsOnTargetPage: true,
+          ignoreFiles: ["感谢名单", "赞助名单"],
+        }),
+      },
+    ],
+    // 高亮对比
+    path.resolve(
+      __dirname,
+      "./src/plugins/docusaurus-plugin-highlight-comparer"
+    ),
+  ],
+
+  plugins: [
+    [
+      "@docusaurus/plugin-client-redirects",
+      /** @type {import('@docusaurus/plugin-client-redirects').Options} */
+      ({
+        redirects,
+        createRedirects,
+      }),
+    ],
+  ],
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+    defaultLocale: "zh-Hans",
+    locales: ["zh-Hans"],
   },
 
   presets: [
@@ -42,9 +110,16 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
+          admonitions: {
+            keywords: ["try"],
+            extendDefaults: true,
+          },
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -53,6 +128,7 @@ const config = {
           changefreq: "weekly",
           filename: "sitemap.xml",
         },
+        blog: false, // 仅文档模式
       }),
     ],
   ],
@@ -60,6 +136,15 @@ const config = {
     {
       src: "https://hm.baidu.com/hm.js?658917ec2a9079c8ea7cdf26958515d6",
       defer: true,
+    },
+  ],
+  stylesheets: [
+    {
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
+      type: "text/css",
+      integrity:
+        "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
+      crossorigin: "anonymous",
     },
   ],
 
@@ -131,13 +216,26 @@ const config = {
         //     ],
         //   },
         // ],
-        copyright: `Copyright © ${new Date().getFullYear()} Tampermonkey Learn Guide, Inc Tampermonkey Chinese Group(油猴中文网).`,
+        copyright: `Copyright © ${new Date().getFullYear()} 油猴中文网 (Inc Tampermonkey Chinese Group).`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
     }),
+  markdown: {
+    mermaid: true,
+    remarkRehypeOptions:{
+      footnoteLabel: "脚注",
+      footnoteBackLabel(id, id2) {
+        return (
+          '回到脚注 ' +
+          (id + 1) +
+          (id2 > 1 ? '-' + id2 : '')
+        )
+      }
+    }
+  },
 };
 
-module.exports = config;
+export default config;
