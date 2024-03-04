@@ -18,7 +18,7 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -27,4 +27,55 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  /* fix docusaurus-search-local plugin search btn */
+  /* see https://github.com/easyops-cn/docusaurus-search-local/issues/336#issuecomment-1527433018 */
+  --ifm-navbar-search-input-icon: url('data:image/svg+xml;utf8,<svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16px" width="16px"><path d="M6.02945,10.20327a4.17382,4.17382,0,1,1,4.17382-4.17382A4.15609,4.15609,0,0,1,6.02945,10.20327Zm9.69195,4.2199L10.8989,9.59979A5.88021,5.88021,0,0,0,12.058,6.02856,6.00467,6.00467,0,1,0,9.59979,10.8989l4.82338,4.82338a.89729.89729,0,0,0,1.29912,0,.89749.89749,0,0,0-.00087-1.29909Z" /></svg>');
+}
+
+.prism-code .add {
+  background-color: rgba(0, 255, 127, 0.1);
+}
+
+.prism-code .remove {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+html[data-theme="dark"] .prism-code .add {
+  background-color: rgba(0, 255, 127, 0.3);
+}
+
+html[data-theme="dark"] .prism-code .remove {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+/* 以下为页面自定义css */
+
+.demo .span-1 {
+  background: var(--ifm-color-info-dark);
+}
+.demo .span-2 {
+  background: var(--ifm-color-warning-dark);
+}
+.demo .span-1,
+.demo .span-2 {
+  margin-right: 5px;
+}
+
+.hide {
+  border: dotted 1px var(--ifm-font-color-base);
+  opacity: 0.3;
+  transition: opacity 0.5s;
+}
+
+.hide:not(:hover) * {
+  opacity: 0;
+}
+
+.hide:hover {
+  opacity: 1;
+}
+
+.center {
+  text-align: center;
 }
