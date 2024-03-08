@@ -4,6 +4,11 @@
 
 在线阅读网址：https://learn.scriptcat.org
 
+# 关于参与维护
+
+请使用npm包管理器，不要新增pnpm，yarn等其他管理器
+
+
 # 项目如何启动
 
 确保本地有 nodejs 环境及 npm
