@@ -79,3 +79,21 @@ html[data-theme="dark"] .prism-code .remove {
 .center {
   text-align: center;
 }
+
+/* 修复 mermaid 过小的问题 */
+.center[class*=" zoom"] {
+  overflow-x: auto;
+}
+
+.center[class*=" zoom"] > div {
+  width: 150%;
+  max-width: unset !important;
+}
+
+.center.zoom2 > div {
+  width: 200%;
+}
+
+.center.zoom3 > div {
+  width: 300%;
+}
