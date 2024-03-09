@@ -33,34 +33,34 @@ const config = {
     "@docusaurus/theme-live-codeblock",
     "@docusaurus/theme-mermaid",
     // PWA 支持
-    [
-      '@docusaurus/plugin-pwa',
-      {
-        debug: true,
-        offlineModeActivationStrategies: [
-          'appInstalled',
-          'standalone',
-          'queryString',
-        ],
-        pwaHead: [
-          {
-            tagName: 'link',
-            rel: 'icon',
-            href: '/img/docusaurus.png',
-          },
-          {
-            tagName: 'link',
-            rel: 'manifest',
-            href: '/manifest.json', // your PWA manifest
-          },
-          // {
-          //   tagName: 'meta',
-          //   name: 'theme-color',
-          //   content: 'rgb(37, 194, 160)',
-          // },
-        ],
-      },
-    ],
+    // [
+    //   '@docusaurus/plugin-pwa',
+    //   {
+    //     debug: true,
+    //     offlineModeActivationStrategies: [
+    //       'appInstalled',
+    //       'standalone',
+    //       'queryString',
+    //     ],
+    //     pwaHead: [
+    //       {
+    //         tagName: 'link',
+    //         rel: 'icon',
+    //         href: '/img/docusaurus.png',
+    //       },
+    //       {
+    //         tagName: 'link',
+    //         rel: 'manifest',
+    //         href: '/manifest.json', // your PWA manifest
+    //       },
+    //       // {
+    //       //   tagName: 'meta',
+    //       //   name: 'theme-color',
+    //       //   content: 'rgb(37, 194, 160)',
+    //       // },
+    //     ],
+    //   },
+    // ],
     [
       // 离线搜索插件
       require.resolve("@easyops-cn/docusaurus-search-local"),
