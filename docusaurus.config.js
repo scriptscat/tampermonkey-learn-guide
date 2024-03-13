@@ -11,7 +11,7 @@ import { redirects, createRedirects } from "./src/plugins/redirect.js";
 const config = {
   title: "油猴开发指南",
   tagline: "更适合国人体质的油猴教程",
-  favicon: "img/favicon.ico",
+  favicon: "/assets/images/favicon.ico",
 
   // Set the production url of your site here
   url: "https://learn.scriptcat.org",
@@ -36,7 +36,7 @@ const config = {
     [
       '@docusaurus/plugin-pwa',
       {
-        debug: true,
+        debug: false,
         offlineModeActivationStrategies: [
           'appInstalled',
           'standalone',
@@ -46,18 +46,13 @@ const config = {
           {
             tagName: 'link',
             rel: 'icon',
-            href: '/img/docusaurus.png',
+            href: '/assets/images/docusaurus.png',
           },
           {
             tagName: 'link',
             rel: 'manifest',
-            href: '/manifest.json', // your PWA manifest
+            href: '/assets/manifest.json', // your PWA manifest
           },
-          // {
-          //   tagName: 'meta',
-          //   name: 'theme-color',
-          //   content: 'rgb(37, 194, 160)',
-          // },
         ],
       },
     ],
@@ -140,11 +135,8 @@ const config = {
   ],
   stylesheets: [
     {
-      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
+      href: "/assets/css/katex.min.css",
       type: "text/css",
-      integrity:
-        "sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM",
-      crossorigin: "anonymous",
     },
   ],
 
@@ -152,12 +144,12 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: "img/docusaurus-social-card.jpg",
+      image: "/assets/images/docusaurus-social-card.jpg",
       navbar: {
         title: "油猴开发指南",
         logo: {
           alt: "",
-          src: "img/logo.svg",
+          src: "/assets/images/logo.svg",
         },
         items: [
           {
@@ -175,47 +167,6 @@ const config = {
       },
       footer: {
         style: "dark",
-        // links: [
-        //   {
-        //     title: 'Docs',
-        //     items: [
-        //       {
-        //         label: 'Tutorial',
-        //         to: '/docs/intro',
-        //       },
-        //     ],
-        //   },
-        //   {
-        //     title: 'Community',
-        //     items: [
-        //       {
-        //         label: 'Stack Overflow',
-        //         href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-        //       },
-        //       {
-        //         label: 'Discord',
-        //         href: 'https://discordapp.com/invite/docusaurus',
-        //       },
-        //       {
-        //         label: 'Twitter',
-        //         href: 'https://twitter.com/docusaurus',
-        //       },
-        //     ],
-        //   },
-        //   {
-        //     title: 'More',
-        //     items: [
-        //       {
-        //         label: 'Blog',
-        //         to: '/blog',
-        //       },
-        //       {
-        //         label: 'GitHub',
-        //         href: 'https://github.com/facebook/docusaurus',
-        //       },
-        //     ],
-        //   },
-        // ],
         copyright: `Copyright © ${new Date().getFullYear()} 油猴中文网 (Inc Tampermonkey Chinese Group).`,
       },
       prism: {

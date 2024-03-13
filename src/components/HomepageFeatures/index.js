@@ -5,12 +5,12 @@ import styles from "./styles.module.css";
 const FeatureList = [
   {
     title: "由简入深",
-    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
+    Svg: require("@site/static/assets/images/undraw_docusaurus_mountain.svg").default,
     description: <>你将由浅入深学习到油猴相关的知识。</>,
   },
   {
     title: "形而上学",
-    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+    Svg: require("@site/static/assets/images/undraw_docusaurus_tree.svg").default,
     description: (
       <>
         你将追溯一切现象的原因。
@@ -19,7 +19,7 @@ const FeatureList = [
   },
   {
     title: "不行退学",
-    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    Svg: require("@site/static/assets/images/undraw_docusaurus_react.svg").default,
     description: (
       <>
         学知识不如打王者。
