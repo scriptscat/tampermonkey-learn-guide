@@ -4,6 +4,20 @@ import useIsBrowser from "@docusaurus/useIsBrowser";
 
 import styles from "./SweetAlert.module.css";
 
+const searchList = [
+  "?base",
+  "?icon",
+  "?footer",
+  "?long",
+  "?html",
+  "?threeBtn",
+  "?animate",
+  "?mixin",
+  "?image",
+  "?hooks",
+  "?ajax",
+];
+
 export default function sweetalert2Demo() {
   const isBrowser = useIsBrowser();
   const positionOptions = ["top", "center", "bottom"].flatMap((a) => [
@@ -13,11 +27,11 @@ export default function sweetalert2Demo() {
   ]);
 
   if (!isBrowser) return null;
-  if (!location.search)
+  if (!location.search || !searchList.includes(location.search))
     return (
       <span>
         请访问
-        <a href="/实用知识库/引用库使用/SweetAlert2实现对话框">
+        <a href="/实用知识库/引用库使用/SweetAlert2实现对话框/">
           【SweetAlert2实现对话框】
         </a>
         以查看更多内容
