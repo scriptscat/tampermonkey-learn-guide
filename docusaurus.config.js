@@ -111,10 +111,6 @@ const config = {
           // Remove this to remove the "edit this page" links.
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
-          admonitions: {
-            keywords: ["try"],
-            extendDefaults: true,
-          },
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
