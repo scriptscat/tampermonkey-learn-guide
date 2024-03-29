@@ -28,7 +28,7 @@ export default function Home() {
   return (
     <Layout
       title={`主页`}
-      description="Description will go into a meta tag in <head />"
+      description="更适合国人体质的油猴教程"
     >
       <HomepageHeader />
       <main>
