@@ -155,6 +155,10 @@ const config = {
             label: "教程目录",
           },
           {
+            href: "https://bbs.tampermonkey.net.cn/",
+            label: "油猴中文网",
+          },
+          {
             href: "https://github.com/scriptscat/userscript-learn-guide",
             label: "GitHub",
             position: "right",
