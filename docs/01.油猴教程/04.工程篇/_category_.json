@@ -1,6 +1,6 @@
 {
   "label": "工程篇",
-  "position": 3,
+  "position": 4,
   "link": {
     "type": "generated-index",
     "description": "本篇集合了一些关于油猴的脚手架的搭建以及常见的工程化知识",

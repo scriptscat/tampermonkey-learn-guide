@@ -1,0 +1,9 @@
+{
+  "label": "高级篇",
+  "position": 3,
+  "link": {
+    "type": "generated-index",
+    "description": "本篇集合了一些关于油猴的较为复杂的案例分析",
+    "slug": "油猴教程/高级篇"
+  }
+}
