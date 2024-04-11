@@ -11,7 +11,7 @@ import { redirects, createRedirects } from "./src/plugins/redirect.js";
 const config = {
   title: "油猴开发指南",
   tagline: "更适合国人体质的油猴教程",
-  favicon: "/assets/images/favicon.ico",
+  favicon: "/assets/images/logo.png",
 
   // Set the production url of your site here
   url: "https://learn.scriptcat.org",
@@ -34,24 +34,24 @@ const config = {
     "@docusaurus/theme-mermaid",
     // PWA 支持
     [
-      '@docusaurus/plugin-pwa',
+      "@docusaurus/plugin-pwa",
       {
         debug: false,
         offlineModeActivationStrategies: [
-          'appInstalled',
-          'standalone',
-          'queryString',
+          "appInstalled",
+          "standalone",
+          "queryString",
         ],
         pwaHead: [
           {
-            tagName: 'link',
-            rel: 'icon',
-            href: '/assets/images/docusaurus.png',
+            tagName: "link",
+            rel: "icon",
+            href: "/assets/images/docusaurus.png",
           },
           {
-            tagName: 'link',
-            rel: 'manifest',
-            href: '/assets/manifest.json', // your PWA manifest
+            tagName: "link",
+            rel: "manifest",
+            href: "/assets/manifest.json", // your PWA manifest
           },
         ],
       },
@@ -145,7 +145,7 @@ const config = {
         title: "油猴开发指南",
         logo: {
           alt: "",
-          src: "/assets/images/logo.svg",
+          src: "/assets/images/logo.png",
         },
         items: [
           {
@@ -157,6 +157,11 @@ const config = {
           {
             href: "https://bbs.tampermonkey.net.cn/",
             label: "油猴中文网",
+          },
+          {
+            href: "https://docs.scriptcat.org/",
+            label: "脚本猫",
+            position: "right",
           },
           {
             href: "https://github.com/scriptscat/userscript-learn-guide",
@@ -176,16 +181,12 @@ const config = {
     }),
   markdown: {
     mermaid: true,
-    remarkRehypeOptions:{
+    remarkRehypeOptions: {
       footnoteLabel: "脚注",
       footnoteBackLabel(id, id2) {
-        return (
-          '回到脚注 ' +
-          (id + 1) +
-          (id2 > 1 ? '-' + id2 : '')
-        )
-      }
-    }
+        return "回到脚注 " + (id + 1) + (id2 > 1 ? "-" + id2 : "");
+      },
+    },
   },
 };
 
