@@ -115,6 +115,10 @@ const config = {
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
+        gtag: {
+          trackingID: "G-R2MES59WR7",
+          anonymizeIP: true,
+        },
         sitemap: {
           changefreq: "weekly",
           filename: "sitemap.xml",
