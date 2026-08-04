@@ -50,5 +50,8 @@
   },
   "engines": {
     "node": ">=16.14"
+  },
+  "overrides": {
+    "shell-quote": "1.8.4"
   }
 }
